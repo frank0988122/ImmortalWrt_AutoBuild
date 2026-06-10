@@ -10,7 +10,7 @@ permissions:
 
 env:
   IMMORTALWRT_REPO: https://github.com/immortalwrt/immortalwrt
-  IMMORTALWRT_BRANCH: openwrt-24.10
+  IMMORTALWRT_BRANCH: openwrt-25.12
 
 jobs:
   check-updates:
