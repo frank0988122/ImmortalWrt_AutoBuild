@@ -5,7 +5,7 @@ REPOS=(
     "https://github.com/immortalwrt/packages"
     "https://github.com/immortalwrt/luci"
 )
-BRANCH="openwrt-24.10"
+BRANCH="openwrt-25.12"
 
 # 存储上次检查的 commit ID 的文件
 COMMIT_FILE="last_commits.txt"
