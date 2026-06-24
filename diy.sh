@@ -37,9 +37,6 @@ git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/
 rm -rf feeds/luci/applications/luci-app-passwall
 git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall-luci
 
-# 移除旧版homeproxy
-rm -rf feeds/luci/applications/luci-app-homeproxy
-git clone https://github.com/VIKINGYFY/homeproxy package/homeproxy
 
 # 移除旧版daed
 rm -rf feeds/packages/net/dae
