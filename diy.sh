@@ -43,7 +43,7 @@ git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
 
 # 添加podman 
 git clone --depth 1 --single-branch https://github.com/breeze303/openwrt-podman package/podman
-./scripts/feeds install -a
+./scripts/feeds install -a -f
 
 # Modify hostname
 #sed -i 's/OpenWrt/OpenWrting/g' package/base-files/files/bin/config_generate
