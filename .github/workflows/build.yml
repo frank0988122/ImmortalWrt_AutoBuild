@@ -138,13 +138,26 @@ jobs:
           ./scripts/feeds update -a
           rm -rf feeds/packages/lang/golang
           git clone https://github.com/kenzok8/golang -b 1.26 feeds/packages/lang/golang
+          # Add new luci-app-openclash
+          rm -rf feeds/luci/applications/luci-app-openclash
+          git clone -b dev --depth 1 https://github.com/vernesong/OpenClash.git /tmp/OpenClash
+          mv /tmp/OpenClash/luci-app-openclash package/
+          git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki.git /tmp/nikki
+          mv /tmp/nikki/luci-app-nikki package/
+          mv /tmp/nikki/nikki package/
+          rm -rf feeds/packages/net/dae
+          rm -rf feeds/packages/net/daed
+          rm -rf feeds/luci/applications/luci-app-daed
+          git clone https://github.com/kenzok8/openwrt-daede package/daede
+          rm -rf feeds/packages/net/mosdns
+          rm -rf feeds/luci/applications/luci-app-mosdns
+          git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
+          # 添加podman 
+          git clone --depth 1 --single-branch https://github.com/breeze303/openwrt-podman package/podman
           ./scripts/feeds install -a 
-
           # 移除 openwrt feeds 自带的核心库
           rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
           git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/passwall-packages
-
-          # 移除 openwrt feeds 过时的luci版本
           rm -rf feeds/luci/applications/luci-app-passwall
           git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall-luci
          
