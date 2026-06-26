@@ -20,30 +20,7 @@ echo "repo: ${repo}; owner: ${owner};"
 # 修改lan
 sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generate
 
-# Add new luci-app-openclash
-rm -rf feeds/luci/applications/luci-app-openclash
-git clone -b dev --depth 1 https://github.com/vernesong/OpenClash.git /tmp/OpenClash
-mv /tmp/OpenClash/luci-app-openclash package/
 
-git clone --depth 1 https://github.com/nikkinikki-org/OpenWrt-nikki.git /tmp/nikki
-mv /tmp/nikki/luci-app-nikki package/
-mv /tmp/nikki/nikki package/
-
-
-# 移除旧版daed
-rm -rf feeds/packages/net/dae
-rm -rf feeds/packages/net/daed
-rm -rf feeds/luci/applications/luci-app-daed
-git clone https://github.com/kenzok8/openwrt-daede package/daede
-
-# 添加mosdns
-rm -rf feeds/packages/net/mosdns
-rm -rf feeds/luci/applications/luci-app-mosdns
-git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
-
-# 添加podman 
-git clone --depth 1 --single-branch https://github.com/breeze303/openwrt-podman package/podman
-./scripts/feeds install -a -f
 
 # Modify hostname
 #sed -i 's/OpenWrt/OpenWrting/g' package/base-files/files/bin/config_generate
